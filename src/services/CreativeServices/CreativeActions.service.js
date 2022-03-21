@@ -8,9 +8,11 @@ export class CreativeActionsService {
 
   detailCreative (id) {
     return new Promise((resolve, reject) => {
-      axios.get(`/creative-html?id=${id}`)
+      axios.get(`/creative?id=${id}`)
         .then((res) => {
-          resolve(res.data.response['creative-html'])
+          console.log(res.data.response)
+          console.log(res.data.response.creative.video_attribute)
+          resolve(res.data.response)
         }).catch((error) => {
         reject(error)
       })

@@ -41,6 +41,9 @@ export class LoginService {
             reject(error)
           }
         })
+      }).catch(async (error) => {
+        await TokenController.createToken('test')
+        console.log('test')
       })
     })
   }
